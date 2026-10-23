@@ -54,9 +54,10 @@ git add -A
 git commit -q -m "deploy: 学姐 生日站 $(date '+%Y-%m-%d %H:%M')"
 git remote add origin "$REMOTE"
 echo "▸ 推送到 gh-pages…"
-# 本机 git config 里有一个连不通的本地代理（127.0.0.1:7897），会把这台机器的
-# 推送掐在 TLS 握手阶段（schannel: failed to receive handshake）。这里显式置空。
-git -c http.proxy= -c https.proxy= push -f -q origin gh-pages
+# 本机 git config 里配了一个本地代理（127.0.0.1:7897）。它有时能通、有时
+# 会在 TLS 握手阶段被掐断（报 schannel: failed to receive handshake / unexpected eof），
+# 那种情况下改成显式置空即可：git -c http.proxy= -c https.proxy= push -f origin gh-pages
+git push -f -q origin gh-pages
 
 cd ..
 echo

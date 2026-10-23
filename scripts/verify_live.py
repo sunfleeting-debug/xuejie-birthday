@@ -11,8 +11,8 @@ EXE = next((pathlib.Path(p) for p in [
     r"C:\Users\Lenovo\AppData\Local\ms-playwright\chromium_headless_shell-1181\chrome-headless-shell-win64\chrome-headless-shell.exe",
 ] if pathlib.Path(p).exists()), None)
 
-URL = "https://sunfleeting-debug.github.io/fuyao-birthday/"
-OUT = r"F:\MyProject\个人网站\fuyao-birthday\.shots"
+URL = "https://sunfleeting-debug.github.io/xuejie-birthday/"
+OUT = r"F:\MyProject\个人网站\xuejie-birthday\.shots"
 os.makedirs(OUT, exist_ok=True)
 errs, failed = [], []
 checks = []
@@ -21,9 +21,9 @@ checks = []
 LAUNCH_ARGS = ["--no-proxy-server"] if os.environ.get("NO_PROXY_SERVER") else []
 
 # 分组名 -> 期望张数（与 content.js 的 GROUPS/PHOTOS 一致）
-GROUP_EXPECT = [("江与城", 8), ("岳麓书院", 4), ("寺与街", 12),
-                ("书店与展", 11), ("逍遥津与仗剑", 19), ("武隆", 4)]
-TOTAL = 58
+GROUP_EXPECT = [("日常", 4), ("和你们一起", 6), ("汉服那天", 3),
+                ("四辩", 2), ("逛街与城", 6)]
+TOTAL = 21
 
 
 def ck(name, ok, extra=""):
@@ -42,7 +42,7 @@ with sync_playwright() as pw:
 
     page.goto(URL, wait_until="networkidle", timeout=60000)
     page.wait_for_timeout(2200)
-    ck("标题正确", page.title() == "扶摇直上 · 生日快乐", f"→ {page.title()}")
+    ck("标题正确", page.title() == "学姐 · 生日快乐", f"→ {page.title()}")
     ck("封面渲染出名字与祝福", page.get_by_text("生日快乐").count() > 0)
 
     # 翻到第 4 屏（生辰）
