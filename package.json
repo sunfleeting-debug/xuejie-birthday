@@ -1,0 +1,29 @@
+{
+  "name": "xuejie-birthday",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "学姐 生日快乐 —— 二十一张照片，一盏孔明灯",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "bash scripts/deploy.sh"
+  },
+  "dependencies": {
+    "framer-motion": "^12.40.0",
+    "lenis": "^1.3.23",
+    "lodash": "^4.18.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.17.0",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.0"
+  }
+}

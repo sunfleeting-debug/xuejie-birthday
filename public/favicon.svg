@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 孔明灯：灯腹 + 内焰 + 上下竹圈 -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#fff2cc" />
+      <stop offset="45%" stop-color="#ffc45e" />
+      <stop offset="100%" stop-color="#e09a34" />
+    </radialGradient>
+  </defs>
+
+  <!-- 灯腹 -->
+  <path
+    d="M32 6c10 0 17 8 17 19 0 9-4 16-6 21H21c-2-5-6-12-6-21C15 14 22 6 32 6Z"
+    fill="url(#glow)"
+    stroke="#ad7a33"
+    stroke-width="2.2"
+    stroke-linejoin="round"
+  />
+  <!-- 竹篾 -->
+  <path d="M17 21h30M19 34h26" stroke="#ad7a33" stroke-width="1.4" opacity="0.5" fill="none" />
+  <!-- 上圈 / 下圈 -->
+  <rect x="24" y="4" width="16" height="4" rx="2" fill="#8a5f26" />
+  <rect x="20" y="45" width="24" height="5" rx="2.5" fill="#8a5f26" />
+  <!-- 灯芯 -->
+  <ellipse cx="32" cy="48" rx="5" ry="3.4" fill="#fff4d0" />
+  <!-- 一盏微光升上去 -->
+  <circle cx="32" cy="27" r="3" fill="#ffd071" />
+</svg>

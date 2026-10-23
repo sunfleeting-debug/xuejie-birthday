@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+.idea
+*.log
+.shots
+.deploy-tmp
+dist-old-*/
